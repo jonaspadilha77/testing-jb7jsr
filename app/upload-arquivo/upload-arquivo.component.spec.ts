@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UploadArquivoComponent } from './upload-arquivo.component';
+import { UploadArquivoModule } from './upload-arquivo.module'
 import { Subject } from 'rxjs';
 
 describe('UploadArquivoComponent', () => {
@@ -8,7 +9,8 @@ describe('UploadArquivoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [UploadArquivoComponent]
+      declarations: [UploadArquivoComponent],
+      imports: [UploadArquivoModule]
     })
       .compileComponents();
   }));
