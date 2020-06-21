@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UploadArquivoComponent } from './upload-arquivo.component';
-import { UploadArquivoModule } from './upload-arquivo.module'
 import { Subject } from 'rxjs';
 import {
   MatToolbarModule,
@@ -19,13 +18,13 @@ describe('UploadArquivoComponent', () => {
     TestBed.configureTestingModule({
       declarations: [UploadArquivoComponent],
       imports: [
-        UploadArquivoModule,
         MatToolbarModule,
         MatIconModule,
         MatCardModule,
         MatButtonModule,
         MatProgressBarModule,
-        MatBadgeModule]
+        MatBadgeModule
+      ]
     })
       .compileComponents();
   }));
@@ -37,11 +36,11 @@ describe('UploadArquivoComponent', () => {
     fixture.detectChanges();
   });
 
-  test('deve criar o componente', () => {
+  it('deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
 
-  test('deve inicializar', () => {
+  it('deve inicializar', () => {
     expect(component).toBeDefined();
   });
 });
