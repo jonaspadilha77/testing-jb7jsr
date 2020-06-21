@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { UploadArquivoComponent } from './upload-arquivo.component';
 
 describe('UploadArquivoComponent', () => {
@@ -8,6 +9,7 @@ describe('UploadArquivoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UploadArquivoComponent ],
+      imports: [FlexLayoutModule]
     })
     .compileComponents();
   }));
@@ -18,11 +20,11 @@ describe('UploadArquivoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o componente', () => {
+  test('deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
 
-  it('deve inicializar', () => {
+  test('deve inicializar', () => {
     expect(component).toBeDefined();
   });
 });

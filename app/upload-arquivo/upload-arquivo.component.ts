@@ -1,7 +1,9 @@
 import { Component, ViewChild, ElementRef, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 @Component({
-    selector: 'app-upload-arquivo'
+    selector: 'app-upload-arquivo',
+    templateUrl: './upload-arquivo.component.html',
+    styleUrls: ['./upload-arquivo.component.scss']
 })
 export class UploadArquivoComponent implements OnInit, OnDestroy {
 
