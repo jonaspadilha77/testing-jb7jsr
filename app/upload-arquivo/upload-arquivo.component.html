@@ -1,1 +1,23 @@
-<div></div>
+<div class="upload-info" *ngIf="hasFile()">
+  <p>Nome do Arquivo: {{ arquivo.name }}</p>
+  <p>Tamanho: {{ arquivo.size | bytes}}</p>
+</div>
+
+<div class="upload-acoes">
+  <div *ngIf="hasFile()">
+    <mat-progress-bar [value]="status.progress"></mat-progress-bar>
+    <div class="contador-progresso">
+      {{ status.progress }}%
+    </div>
+  </div>
+
+  <button mat-raised-button mat-secundary color="secundary" (click)="abrir()">
+    <mat-icon>open_in_browser</mat-icon>
+    Abrir Aquivo
+  </button>
+  <button mat-raised-button color="primary" (click)="clickUpload()" *ngIf="hasFile()">
+    <mat-icon>file_upload</mat-icon>
+    Upload
+  </button>
+  <input type="file" #fileUpload id="fileUpload" name="fileUpload" [accept]="accept" style="display:none;" />
+</div>
