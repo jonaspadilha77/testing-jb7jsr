@@ -6,20 +6,15 @@ import {
     MatCardModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MaterialModule
 } from '@angular/material';
 import { UploadArquivoComponent } from './upload-arquivo.component';
 import { UploadArquivoBytesPipe } from './upload-arquivo-bytes.pipe';
 @NgModule({
     declarations: [UploadArquivoComponent, UploadArquivoBytesPipe],
     imports: [
-        CommonModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatCardModule,
-        MatButtonModule,
-        MatProgressBarModule,
-        MatBadgeModule
+      MaterialModule
     ],
     exports: [UploadArquivoComponent, UploadArquivoBytesPipe]
 })
