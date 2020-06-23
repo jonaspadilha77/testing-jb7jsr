@@ -13,8 +13,8 @@ export class UploadArquivoComponent implements OnInit, OnDestroy {
         progress: number;
     };
     @Input() resetObservable: Observable<boolean>;
-    @Output() obterArquivo = new EventEmitter();
     @Output() enviarArquivo = new EventEmitter<File>();
+    @Output() obterArquivo = new EventEmitter<File>();
     $resetSubs: Subscription;
     arquivo: File;
 
@@ -30,26 +30,25 @@ export class UploadArquivoComponent implements OnInit, OnDestroy {
         this.$resetSubs.unsubscribe();
     }
 
-    abrir() {
+
+    public abrir(): void {
         this.fileUpload.nativeElement.click();
         this.fileUpload.nativeElement.onchange = () => {
             this.arquivo = this.fileUpload.nativeElement.files[0];
+            this.obterArquivo.emit(this.arquivo);
         };
-        this.obterArquivo.emit(this.arquivo);
+    }
+    public hasFile(): boolean {
+        return this.fileUpload && this.fileUpload.nativeElement.files.length > 0;
     }
 
-    hasFile() {
-        return this.fileUpload.nativeElement.files.length > 0;
-    }
 
-
-    clickUpload() {
+    public clickUpload(): void {
         this.enviarArquivo.emit(this.arquivo);
     }
 
-    onReset() {
+    public onReset(): void {
         this.fileUpload.nativeElement.value = null;
-        this.obterArquivo.emit(null);
         this.status.progress = 0;
     }
 }
