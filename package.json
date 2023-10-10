@@ -6,7 +6,7 @@
             "@angular/cdk": "^10.0.0-rc.0",
             "@angular/common": "5.1.2",
             "@angular/compiler": "5.1.2",
-            "@angular/core": "5.1.2",
+            "@angular/core": "10.2.5",
             "@angular/platform-browser": "5.1.2",
             "@angular/platform-browser-dynamic": "5.1.2",
             "@types/dedent": "0.7.0",
